@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header class="header header-page">
+      <a href="#" class="header__menu-expand" @click="expandNavigation"><img src="https://png.icons8.com/ios/24/ffffff/menu.png" alt="Expand Navigation"></a>
       <nav class="header__nav">
         <router-link class="header__nav__link" to="/">
           Home
@@ -40,6 +41,25 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    expandNavigation: function () {
+      const headerNav = document.querySelector(".header__nav")
+      const headerSocialMedia = document.querySelector(".header__social-media")
+      if ( headerNav.style.display != "block") {
+        headerNav.style.display = "block"
+        headerSocialMedia.style.display = "block"
+      } else {
+        headerNav.style.display = "none"
+        headerSocialMedia.style.display = "none"
+      }
+    }
+  }
+}
+</script>
+
+
 <style>
 html,
 body {
@@ -66,9 +86,10 @@ body:before {
   position: relative;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 2fr;
+  grid-template-rows: auto;
   min-height: 100%;
 }
+
 .header-page {
   position: relative;
   display: flex;
@@ -80,10 +101,14 @@ body:before {
   width: 133px;
   left: -100px;
   transition: 1s ease-in-out;
+  z-index: 10;
 }
 .header-page:hover {
   left: 0;
   transition: .13s ease-in-out;
+}
+.header__menu-expand {
+  display: none;
 }
 .header__nav,
 .header__social-media {
@@ -108,5 +133,36 @@ body:before {
   justify-self: center;
   align-self: center;
   width: 100%;
+}
+
+@media (max-width: 480px) {
+  #app {
+    grid-template-rows: min-content;
+  }
+  .header-page {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+  }
+  .header__menu-expand {
+    display: block;
+    padding: 2px 4px 0 0;
+    text-align: right;
+  }
+  .header__nav,
+  .header__social-media {
+    display: none;
+  }
+  .header-page {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+    width: 100%;
+    left: 0;
+  }
+  .main-page {
+    margin-top: 3rem;
+    grid-column: 1 / span 12;
+    grid-row: 2;
+  }
 }
 </style>

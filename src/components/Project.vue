@@ -159,4 +159,15 @@
     content: "\A";
     white-space: pre;
   }
+@media (max-width: 480px) {
+  .projects {
+    flex-direction: column;
+  }
+  .projects__project:not(:first-child) {
+    margin-left: 0;
+  }
+  .projects__project {
+    margin-bottom: 1rem;
+  }
+}
 </style>

@@ -1,6 +1,11 @@
 # mikolajszczepanski.pl
 ### *My Personal webpage*
 
+## Why so much spaghetti?!
+```
+I had no time, had to do this as fast as I could. It will be rewritten, sorry. 
+```
+
 ## Project setup
 ```
 npm install

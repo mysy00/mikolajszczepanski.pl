@@ -1,21 +1,25 @@
 <template>
-  <section class="projects__project">
-    <div class="project__header">
-      <a :href="preview" class="project__header__link">
-        <img class="project__header__img" :src="previewThumbnail" alt="">
-      </a>
-    </div>
-    <div class="project__desc">
-      <dl class="project__desc__list">
-        <dt class="project__desc__list__item-title">{{ nameTitle }}</dt>
-        <dd class="project__desc__list__item-desc">{{ name }}</dd>
-        <dt class="project__desc__list__item-title"> {{ previewTitle }}</dt>
-        <dd class="project__desc__list__item-desc">{{ preview }}</dd>
-        <dt class="project__desc__list__item-title">{{ sourceCodeTitle }}</dt>
-        <dd class="project__desc__list__item-desc">{{ sourceCode }}</dd>
-      </dl>
-    </div>
-  </section>
+  <div class="projects">
+    <section class="projects__project" v-for="project in projects" :key="project.fullSize">
+      <div class="project__header">
+        <a :href="project.fullSize" class="project__header__link">
+          <img class="project__header__img" :src="project.thumbnail" alt="">
+        </a>
+      </div>
+      <div class="project__desc">
+        <dl class="project__desc__list">
+          <dt class="project__desc__list__item-title">{{ nameTitle }}</dt>
+          <dd class="project__desc__list__item-desc">{{ project.name }}</dd>
+          <dt class="project__desc__list__item-title" v-if="project.fullSize"> {{ previewImage }}</dt>
+          <dd class="project__desc__list__item-desc" v-if="project.fullSize"><a :href="project.fullSize">Click Here</a></dd>
+          <dt class="project__desc__list__item-title" v-if="project.previewLive"> {{ previewLive }}</dt>
+          <dd class="project__desc__list__item-desc" v-if="project.previewLive"><a :href="project.previewLive">Click Here</a></dd>
+          <dt class="project__desc__list__item-title" v-if="project.sourceCode">{{ sourceCodeTitle }}</dt>
+          <dd class="project__desc__list__item-desc" v-if="project.sourceCode"><a :href="project.sourceCode">Click Here</a></dd>
+        </dl>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -24,28 +28,106 @@
     data: function () {
       return {
         nameTitle: "Name:",
-        previewTitle: "Preview:",
-        sourceCodeTitle: "Source Code:"
+        previewImage: 'Full Size:',
+        previewLive: 'Live Preview:',
+        sourceCodeTitle: 'Source Code:',
+        projects: [{
+          name: 'Old portfolio, the point was to made it look like a real DE',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-1.png',
+          fullSize: './img/projects/1.png'
+        },
+        {
+          name: 'One of first portfolios',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-2.png',
+          fullSize: './img/projects/2.png'
+        },
+        {
+          name: 'Multilangual website for a SA:MP Server, the goal was to help new players',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-3.png',
+          fullSize: './img/projects/3.png'
+        },
+        {
+          name: 'Signature & Userbar generator for a SA:MP Server',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-4.png',
+          fullSize: './img/projects/4.png'
+        },
+        {
+          name: 'A tiny school project to get a better mark',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-5.png',
+          fullSize: './img/projects/5.png'
+        },
+        {
+          name: 'One of first portfolios',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-6.png',
+          fullSize: './img/projects/6.png'
+        },
+        {
+          name: 'Mybb theme written basically from scratch, based on bootstrap 4',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-7.png',
+          fullSize: './img/projects/7.png'
+        },
+        {
+          name: 'Mybb theme written basically from scratch for a SA:MP EXM Community, based on bootstrap 4',
+          previewLive: '',
+          sourceCode: '',
+          thumbnail: './img/projects/small-8.png',
+          fullSize: './img/projects/8.png'
+        }
+      ]
       }
-    },
-    props: {
-      name: String,
-      preview: String,
-      previewThumbnail: String,
-      sourceCode: String
     }
   }
 </script>
 <style scoped>
+  .projects {
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    margin: 0 auto;
+    padding: 1rem 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .projects::-webkit-scrollbar {
+    height: 2vh;
+  }
+
+  .projects::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .2);
+    border-radius: 50px;
+  }
+
+  .projects::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .5);
+    border-radius: 50px;
+  }
+
   .projects__project {
     display: inline-block;
     background: #fafafaee;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     color: #060606;
   }
+
   .projects__project:not(:first-child) {
     margin-left: 1rem;
   }
+
   .project__header,
   .project__header__img {
     height: 250px;

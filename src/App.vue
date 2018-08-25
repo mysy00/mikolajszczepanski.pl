@@ -103,10 +103,10 @@ body:before {
   font-size: 1.3rem;
 }
 .main-page {
-  grid-column: 1 / span 12;
+  grid-column: 2 / span 12;
   grid-row: 1;
   justify-self: center;
   align-self: center;
-  max-width: 100%;
+  width: 100%;
 }
 </style>

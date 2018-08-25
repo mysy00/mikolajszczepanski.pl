@@ -52,7 +52,6 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #fafafa;
 }
 body:before {
@@ -108,5 +107,6 @@ body:before {
   grid-row: 1;
   justify-self: center;
   align-self: center;
+  max-width: 100%;
 }
 </style>

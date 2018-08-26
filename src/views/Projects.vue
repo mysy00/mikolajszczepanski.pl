@@ -1,7 +1,5 @@
 <template>
-  <section>
     <Project />
-  </section>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <section class="projects">
     <section class="projects__project" v-for="project in projects" :key="project.fullSize">
       <div class="project__header">
         <a :href="project.fullSize" class="project__header__link">
@@ -10,16 +10,25 @@
         <dl class="project__desc__list">
           <dt class="project__desc__list__item-title">{{ nameTitle }}</dt>
           <dd class="project__desc__list__item-desc">{{ project.name }}</dd>
+
           <dt class="project__desc__list__item-title" v-if="project.fullSize"> {{ previewImage }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.fullSize"><a :href="project.fullSize">Click Here</a></dd>
+          <dd class="project__desc__list__item-desc" v-if="project.fullSize">
+            <a :href="project.fullSize">Click Here</a>
+          </dd>
+
           <dt class="project__desc__list__item-title" v-if="project.previewLive"> {{ previewLive }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.previewLive"><a :href="project.previewLive">Click Here</a></dd>
+          <dd class="project__desc__list__item-desc" v-if="project.previewLive">
+            <a :href="project.previewLive">Click Here</a>
+          </dd>
+          
           <dt class="project__desc__list__item-title" v-if="project.sourceCode">{{ sourceCodeTitle }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.sourceCode"><a :href="project.sourceCode">Click Here</a></dd>
+          <dd class="project__desc__list__item-desc" v-if="project.sourceCode">
+            <a :href="project.sourceCode">Click Here</a>
+          </dd>
         </dl>
       </div>
     </section>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -92,82 +101,86 @@
     }
   }
 </script>
+
 <style scoped>
+.projects {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects::-webkit-scrollbar {
+  height: 2vh;
+}
+
+.projects::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .2);
+  border-radius: 50px;
+}
+
+.projects::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .5);
+  border-radius: 50px;
+}
+
+.projects__project {
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  color: #060606;
+  background: #fafafaee;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+}
+
+.project__header,
+.project__header__img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+.project__desc__list {
+  display: block;
+  padding: .5rem;
+  margin: 0;
+}
+
+.project__desc__list__item-title {
+  font-weight: 700;
+}
+
+.project__desc__list__item-title,
+.project__desc__list__item-desc {
+  display: inline;
+  margin: 0;
+}
+
+.project__desc__list__item-desc:before {
+  content: " ";
+}
+
+.project__desc__list__item-desc:after {
+  white-space: pre;
+  content: "\A";
+}
+
+@media (min-width: 720px) {
   .projects {
-    position: relative;
     display: flex;
-    overflow-x: scroll;
-    margin: 0 auto;
-    padding: 1rem 0;
     box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
+    width: 90%;
+    padding: 1rem 0;
+    margin: 0 auto;
+    overflow-x: scroll;
   }
-
-  .projects::-webkit-scrollbar {
-    height: 2vh;
-  }
-
-  .projects::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, .2);
-    border-radius: 50px;
-  }
-
-  .projects::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, .5);
-    border-radius: 50px;
-  }
-
   .projects__project {
     display: inline-block;
-    background: #fafafaee;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    color: #060606;
   }
-
   .projects__project:not(:first-child) {
     margin-left: 1rem;
   }
-
   .project__header,
   .project__header__img {
-    height: 250px;
     width: 350px;
-  }
-
-  .project__desc__list {
-    display: block;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: .5rem;
-  }
-
-  .project__desc__list__item-title {
-    font-weight: 700;
-  }
-
-  .project__desc__list__item-title,
-  .project__desc__list__item-desc {
-    display: inline;
-    margin: 0;
-  }
-
-  .project__desc__list__item-desc:before {
-    content: " ";
-  }
-
-  .project__desc__list__item-desc:after {
-    content: "\A";
-    white-space: pre;
-  }
-@media (max-width: 480px) {
-  .projects {
-    flex-direction: column;
-  }
-  .projects__project:not(:first-child) {
-    margin-left: 0;
-  }
-  .projects__project {
-    margin-bottom: 1rem;
+    height: 250px;
   }
 }
 </style>

@@ -70,40 +70,46 @@
 </template>
 
 <style scoped>
-.about {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(145px,1fr));
-  grid-auto-rows: minmax(120px, auto);
-}
 .box {
+  box-sizing: border-box;
   padding: .1rem 1rem;
+  margin-bottom: 1rem;
+  color: #060606;
   background: #fafafaee;
   box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
-  color: #060606;
-  box-sizing: border-box;
 }
-.box:nth-child(odd) {
-  grid-column-end: span 2;
-  grid-row-end: span 2;
-}
-.box:nth-child(even) {
-  grid-column-end: span 3;
-}
+
 .box__content__list {
-  list-style: none;
   padding-left: .5rem;
+  list-style: none;
 }
+
 .box__content__list__item {
   margin-bottom: .3rem;
 }
 
-@media (max-width: 480px) {
-  .about { grid-template-columns: 12fr; }
-  .box { margin-bottom: 1rem; width: 100%; grid-column-end: span 12; }
-  .box:nth-child(odd),
-  .box:nth-child(even) {
-    grid-column-end: span 12;
+@supports (display: grid) {
+  @media (min-width: 480px) {
+    .about {
+      width: 90%;
+      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      grid-auto-rows: minmax(120px, auto);
+    }
+    .box:nth-child(even) {
+      grid-row-end: span 1;
+    }
+  }
+  .about {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    grid-auto-rows: auto;
+    justify-self: center;
+  }
+  .box {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
   }
 }
 </style>

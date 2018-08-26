@@ -32,6 +32,7 @@ export default {
     text-align: center;
   }
   .keypart {
+    display: inline-block;
     white-space: nowrap;
   }
   .keypart:not(:first-child) {

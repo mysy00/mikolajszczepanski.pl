@@ -92,8 +92,51 @@
     }
   }
 </script>
+
 <style scoped>
-  .projects {
+.projects {
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects__project {
+  margin-bottom: 1rem;
+  background: #fafafaee;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  color: #060606;
+}
+
+.project__header,
+.project__header__img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+.project__desc__list {
+  display: block;
+  margin: 0;
+  padding: .5rem;
+}
+
+.project__desc__list__item-title {
+  font-weight: 700;
+}
+
+.project__desc__list__item-title,
+.project__desc__list__item-desc {
+  display: inline;
+  margin: 0;
+}
+
+.project__desc__list__item-desc:before {
+  content: " ";
+}
+
+.project__desc__list__item-desc:after {
+  content: "\A";
+  white-space: pre;
+}
+/*  .projects {
     position: relative;
     display: flex;
     overflow-x: scroll;
@@ -170,4 +213,5 @@
     margin-bottom: 1rem;
   }
 }
+*/
 </style>

@@ -70,7 +70,22 @@
 </template>
 
 <style scoped>
-.about {
+.box {
+  margin-bottom: 1rem;
+  padding: .1rem 1rem;
+  background: #fafafaee;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+  color: #060606;
+  box-sizing: border-box;
+}
+.box__content__list {
+  list-style: none;
+  padding-left: .5rem;
+}
+.box__content__list__item {
+  margin-bottom: .3rem;
+}
+/*.about {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(145px,1fr));
@@ -105,5 +120,5 @@
   .box:nth-child(even) {
     grid-column-end: span 12;
   }
-}
+}*/
 </style>

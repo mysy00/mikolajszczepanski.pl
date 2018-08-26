@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <section class="projects">
     <section class="projects__project" v-for="project in projects" :key="project.fullSize">
       <div class="project__header">
         <a :href="project.fullSize" class="project__header__link">
@@ -19,7 +19,7 @@
         </dl>
       </div>
     </section>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -96,13 +96,29 @@
 <style scoped>
 .projects {
   -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+
+.projects::-webkit-scrollbar {
+  height: 2vh;
+}
+
+.projects::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .2);
+  border-radius: 50px;
+}
+
+.projects::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .5);
+  border-radius: 50px;
 }
 
 .projects__project {
   margin-bottom: 1rem;
   background: #fafafaee;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
   color: #060606;
+  box-sizing: border-box;
 }
 
 .project__header,
@@ -136,82 +152,26 @@
   content: "\A";
   white-space: pre;
 }
-/*  .projects {
-    position: relative;
+
+@media (min-width: 720px) {
+  .projects {
     display: flex;
     overflow-x: scroll;
+    width: 90%;
     margin: 0 auto;
     padding: 1rem 0;
     box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
   }
-
-  .projects::-webkit-scrollbar {
-    height: 2vh;
-  }
-
-  .projects::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, .2);
-    border-radius: 50px;
-  }
-
-  .projects::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, .5);
-    border-radius: 50px;
-  }
-
   .projects__project {
     display: inline-block;
-    background: #fafafaee;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    color: #060606;
   }
-
   .projects__project:not(:first-child) {
     margin-left: 1rem;
   }
-
   .project__header,
   .project__header__img {
     height: 250px;
     width: 350px;
   }
-
-  .project__desc__list {
-    display: block;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: .5rem;
-  }
-
-  .project__desc__list__item-title {
-    font-weight: 700;
-  }
-
-  .project__desc__list__item-title,
-  .project__desc__list__item-desc {
-    display: inline;
-    margin: 0;
-  }
-
-  .project__desc__list__item-desc:before {
-    content: " ";
-  }
-
-  .project__desc__list__item-desc:after {
-    content: "\A";
-    white-space: pre;
-  }
-@media (max-width: 480px) {
-  .projects {
-    flex-direction: column;
-  }
-  .projects__project:not(:first-child) {
-    margin-left: 0;
-  }
-  .projects__project {
-    margin-bottom: 1rem;
-  }
 }
-*/
 </style>

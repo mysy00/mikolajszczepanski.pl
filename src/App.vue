@@ -52,7 +52,6 @@ export default {
 }
 </script>
 
-
 <style>
 html,
 body {
@@ -65,18 +64,18 @@ body {
 
 body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  color: #fafafa;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #fafafa;
 }
 
 body:before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  content: '';
   background: #00000066;
 }
 
@@ -91,8 +90,8 @@ body:before {
 
 .header__expand-navigation-label {
   display: block;
-  text-align: right;
   padding: 4px;
+  text-align: right;
 }
 
 .header__expand-navigation-input {
@@ -110,11 +109,11 @@ body:before {
 .header__nav__link {
   display: flex;
   justify-content: space-between;
-  margin-bottom: .3rem;
   padding: .3rem;
+  margin-bottom: .3rem;
+  font-size: 1.3rem;
   color: #fff;
   text-decoration: none;
-  font-size: 1.3rem;
 }
 
 .header__nav__socialmedia-section {
@@ -127,35 +126,15 @@ body:before {
 }
 
 @supports (display: grid) {
-  body {
-    overflow: hidden;
-  }
-  #app {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 1fr;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  .header {
-    grid-column: 1 / span 12;
-    grid-row: 1;
-  }
-  .main-page {
-    grid-column: 1 / span 12;
-    grid-row: 2;
-    align-self: center;
-    margin-top: 1rem;
-  }
   @media (min-width: 480px) {
     .header {
       position: fixed;
-      top: 0; bottom: 0;
+      top: 0;
+      bottom: 0;
       display: flex;
+      width: min-content;
       grid-column: 1;
       grid-row: 1 / span 2;
-      width: min-content;
     }
     .header__expand-navigation-label {
       display: none;
@@ -179,24 +158,37 @@ body:before {
       left: 105%;
       display: none;
       padding: .3rem;
+      font-size: .7rem;
       background: #2a2a2a;
       border-radius: 3px;
-      font-size: .7rem;
     }
-    .header__nav__link:hover > .header__nav__link__title {
+    .header__nav__link:hover>.header__nav__link__title {
       display: block;
     }
     .main-page {
       grid-column: 2 / span 12;
     }
   }
+  body {
+    overflow: hidden;
+  }
+  #app {
+    display: grid;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+  .header {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+  }
+  .main-page {
+    align-self: center;
+    margin-top: 1rem;
+    grid-column: 1 / span 12;
+    grid-row: 2;
+  }
 }
-
-/*.header__nav__main-section,
-.header__nav__socialmedia-section {
-  display: flex;*/
-
-/*justify-items: space-around;
-}*/
-
 </style>

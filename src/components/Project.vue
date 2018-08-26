@@ -10,12 +10,21 @@
         <dl class="project__desc__list">
           <dt class="project__desc__list__item-title">{{ nameTitle }}</dt>
           <dd class="project__desc__list__item-desc">{{ project.name }}</dd>
+
           <dt class="project__desc__list__item-title" v-if="project.fullSize"> {{ previewImage }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.fullSize"><a :href="project.fullSize">Click Here</a></dd>
+          <dd class="project__desc__list__item-desc" v-if="project.fullSize">
+            <a :href="project.fullSize">Click Here</a>
+          </dd>
+
           <dt class="project__desc__list__item-title" v-if="project.previewLive"> {{ previewLive }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.previewLive"><a :href="project.previewLive">Click Here</a></dd>
+          <dd class="project__desc__list__item-desc" v-if="project.previewLive">
+            <a :href="project.previewLive">Click Here</a>
+          </dd>
+          
           <dt class="project__desc__list__item-title" v-if="project.sourceCode">{{ sourceCodeTitle }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.sourceCode"><a :href="project.sourceCode">Click Here</a></dd>
+          <dd class="project__desc__list__item-desc" v-if="project.sourceCode">
+            <a :href="project.sourceCode">Click Here</a>
+          </dd>
         </dl>
       </div>
     </section>
@@ -95,8 +104,8 @@
 
 <style scoped>
 .projects {
-  -webkit-overflow-scrolling: touch;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .projects::-webkit-scrollbar {
@@ -114,11 +123,11 @@
 }
 
 .projects__project {
+  box-sizing: border-box;
   margin-bottom: 1rem;
+  color: #060606;
   background: #fafafaee;
   box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
-  color: #060606;
-  box-sizing: border-box;
 }
 
 .project__header,
@@ -130,8 +139,8 @@
 
 .project__desc__list {
   display: block;
-  margin: 0;
   padding: .5rem;
+  margin: 0;
 }
 
 .project__desc__list__item-title {
@@ -149,18 +158,18 @@
 }
 
 .project__desc__list__item-desc:after {
-  content: "\A";
   white-space: pre;
+  content: "\A";
 }
 
 @media (min-width: 720px) {
   .projects {
     display: flex;
-    overflow-x: scroll;
-    width: 90%;
-    margin: 0 auto;
-    padding: 1rem 0;
     box-sizing: border-box;
+    width: 90%;
+    padding: 1rem 0;
+    margin: 0 auto;
+    overflow-x: scroll;
   }
   .projects__project {
     display: inline-block;
@@ -170,8 +179,8 @@
   }
   .project__header,
   .project__header__img {
-    height: 250px;
     width: 350px;
+    height: 250px;
   }
 }
 </style>

@@ -162,7 +162,7 @@
   content: "\A";
 }
 
-@media (min-width: 720px) {
+@media (min-width: 480px) {
   .projects {
     display: flex;
     box-sizing: border-box;

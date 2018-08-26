@@ -126,6 +126,27 @@ body:before {
 }
 
 @supports (display: grid) {
+  body {
+    overflow: hidden;
+  }
+  #app {
+    display: grid;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+  .header {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+  }
+  .main-page {
+    align-self: center;
+    margin-top: 1rem;
+    grid-column: 1 / span 12;
+    grid-row: 2;
+  }
   @media (min-width: 480px) {
     .header {
       position: fixed;
@@ -168,27 +189,6 @@ body:before {
     .main-page {
       grid-column: 2 / span 12;
     }
-  }
-  body {
-    overflow: hidden;
-  }
-  #app {
-    display: grid;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 1fr;
-  }
-  .header {
-    grid-column: 1 / span 12;
-    grid-row: 1;
-  }
-  .main-page {
-    align-self: center;
-    margin-top: 1rem;
-    grid-column: 1 / span 12;
-    grid-row: 2;
   }
 }
 </style>

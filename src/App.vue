@@ -53,6 +53,10 @@ export default {
 </script>
 
 <style>
+:root {
+ --primary-color: #1082E8;
+ --box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23); 
+}
 html,
 body {
   height: 100%;

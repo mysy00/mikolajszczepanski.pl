@@ -127,7 +127,7 @@
   margin-bottom: 1rem;
   color: #060606;
   background: #fafafaee;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+  box-shadow: var(--box-shadow);
 }
 
 .project__header,

@@ -9,33 +9,33 @@
         <div class="header__nav__main-section">
           <router-link class="header__nav__link" to="/">
             <span class="header__nav__link__title">Home</span>
-            <img src="https://png.icons8.com/ios/24/ffffff/home.png">
+            <home />
           </router-link>
           <router-link class="header__nav__link" to="/projects">
             <span class="header__nav__link__title">Projects</span>
-            <img src="https://png.icons8.com/ios/24/ffffff/file.png">
+            <briefcase />
           </router-link>
           <router-link class="header__nav__link" to="/about">
             <span class="header__nav__link__title">About</span>
-            <img src="https://png.icons8.com/ios/24/ffffff/question-mark.png">
+            <about />
           </router-link>
         </div>
         <div class="header__nav__socialmedia-section">
           <a class="header__nav__link" href="http://facebook.com/divoskyy">
             <span class="header__nav__link__title">Facebook</span>
-            <img src="https://png.icons8.com/ios/24/ffffff/facebook.png">
+            <facebook />
           </a>
           <a class="header__nav__link" href="http://github.com/divosky">
             <span class="header__nav__link__title">Github</span>
-            <img src="https://png.icons8.com/ios/24/ffffff/github.png">
+            <github />
           </a>
           <a class="header__nav__link" href="http://gitlab.com/divosky">
             <span class="header__nav__link__title">GitLab</span>
-            <img src="https://png.icons8.com/ios/24/ffffff/gitlab.png">
+            <gitlab />
           </a>
           <a class="header__nav__link" href="http://keybase.io/divosky">
             <span class="header__nav__link__title">Keybase</span>
-            <img src="https://png.icons8.com/ios/24/ffffff/keybase.png">
+            <keybase />
           </a>
         </div>
       </nav>
@@ -47,8 +47,24 @@
 </template>
 
 <script>
+import home from '@/components/icons/Home'
+import briefcase from '@/components/icons/Briefcase'
+import about from '@/components/icons/About'
+import facebook from '@/components/icons/Facebook'
+import github from '@/components/icons/Github'
+import gitlab from '@/components/icons/Gitlab'
+import keybase from '@/components/icons/Keybase'
+
 export default {
-  
+  components: {
+    home,
+    briefcase,
+    about,
+    facebook,
+    github,
+    gitlab,
+    keybase
+  }
 }
 </script>
 
@@ -118,6 +134,12 @@ body:before {
   font-size: 1.3rem;
   color: #fff;
   text-decoration: none;
+}
+
+.router-link-exact-active > .header__nav__link__icon,
+.router-link-exact-active > .header__nav__link__title {
+  color: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 .header__nav__socialmedia-section {

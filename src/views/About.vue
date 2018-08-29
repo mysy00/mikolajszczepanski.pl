@@ -21,7 +21,7 @@
           <li class="box__content__list__item">
             <strong>GIT</strong> — Beginner</li>
           <li class="box__content__list__item">
-            <strong>Linus</strong> — Intermediate - daily user</li>
+            <strong>Linux</strong> — Intermediate - daily user</li>
           <li class="box__content__list__item">
             <strong>Windows</strong> — Intermediate</li>
         </ul>

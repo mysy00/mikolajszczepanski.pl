@@ -69,6 +69,15 @@
   </section>
 </template>
 
+<script>
+export default {
+  name: 'about',
+  mounted: function() {  
+    document.title = localStorage.pageTitle + ' | About Me'  
+  }
+}
+</script>
+
 <style scoped>
 .box {
   box-sizing: border-box;

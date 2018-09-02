@@ -12,6 +12,9 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  mounted: function () {
+    document.title = localStorage.pageTitle
   }
 }
 </script>

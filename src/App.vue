@@ -64,6 +64,9 @@ export default {
     github,
     gitlab,
     keybase
+  },
+  created: function () {
+    localStorage.pageTitle = document.title
   }
 }
 </script>

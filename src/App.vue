@@ -9,33 +9,33 @@
         <div class="header__nav__main-section">
           <router-link class="header__nav__link" to="/">
             <span class="header__nav__link__title">Home</span>
-            <home />
+            <home iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
           </router-link>
           <router-link class="header__nav__link" to="/projects">
             <span class="header__nav__link__title">Projects</span>
-            <briefcase />
+            <briefcase iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
           </router-link>
           <router-link class="header__nav__link" to="/about">
             <span class="header__nav__link__title">About</span>
-            <about />
+            <about iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
           </router-link>
         </div>
         <div class="header__nav__socialmedia-section">
           <a class="header__nav__link" href="http://facebook.com/divoskyy">
             <span class="header__nav__link__title">Facebook</span>
-            <facebook />
+            <facebook iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
           </a>
           <a class="header__nav__link" href="http://github.com/divosky">
             <span class="header__nav__link__title">Github</span>
-            <github />
+            <github iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
           </a>
           <a class="header__nav__link" href="http://gitlab.com/divosky">
             <span class="header__nav__link__title">GitLab</span>
-            <gitlab />
+            <gitlab iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
           </a>
           <a class="header__nav__link" href="http://keybase.io/divosky">
             <span class="header__nav__link__title">Keybase</span>
-            <keybase />
+            <keybase iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
           </a>
         </div>
       </nav>
@@ -74,7 +74,8 @@ export default {
 <style>
 :root {
  --primary-color: #1082E8;
- --box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23); 
+ --box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+ --nav-icon-color: #bbb;
 }
 html,
 body {
@@ -141,6 +142,7 @@ body:before {
 
 .router-link-exact-active > .header__nav__link__icon,
 .router-link-exact-active > .header__nav__link__title {
+  --nav-icon-color: --primary-color;
   color: var(--primary-color);
   fill: var(--primary-color);
 }

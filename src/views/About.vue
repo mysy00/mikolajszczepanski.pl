@@ -1,7 +1,7 @@
 <template>
   <section class="about">
     <section class="box">
-      <h3 class="box__title">Skills</h3>
+      <h3 class="box__title">Main Skills</h3>
       <div class="box__content">
         <ul class="box__content__list">
           <li class="box__content__list__item">

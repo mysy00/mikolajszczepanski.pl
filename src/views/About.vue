@@ -47,7 +47,7 @@
       <div class="box__content">
         <ul class="box__content__list">
           <li class="box__content__list__item">
-            <strong>Languages</strong> — Polish (native), English (written: intermediate; spoken: beginner)</li>
+            <strong>Languages</strong> — Polish (native), English (intermediate)</li>
           <li class="box__content__list__item">
             <strong>Interests</strong> — Technology; coding specific elements for games, including (but not limited to): websites,
             scripts for servers; watching tv series and playing games</li>
@@ -109,27 +109,26 @@ export default {
 }
 
 @supports (display: grid) {
-  @media (min-width: 480px) {
-    .about {
-      width: 90%;
-      margin: 0 auto;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      grid-auto-rows: minmax(120px, auto);
-    }
-    .box:nth-child(even) {
-      grid-row-end: span 1;
-    }
-  }
   .about {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
     grid-auto-rows: auto;
     justify-self: center;
   }
   .box {
     grid-column-end: span 2;
     grid-row-end: span 2;
+  }
+  @media (min-width: 480px) {
+    .about {
+      width: 90%;
+      margin: 0 auto;
+      grid-auto-rows: minmax(120px, auto);
+    }
+    .box:nth-child(even) {
+      grid-row-end: span 1;
+    }
   }
 }
 </style>

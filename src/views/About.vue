@@ -5,25 +5,25 @@
       <div class="box__content">
         <ul class="box__content__list">
           <li class="box__content__list__item">
-            <strong>HTML5</strong> — Intermediate</li>
+            <strong>HTML5</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="3"/></li>
           <li class="box__content__list__item">
-            <strong>CSS3</strong> — Intermediate</li>
+            <strong>CSS3</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="3"/></li>
           <li class="box__content__list__item">
-            <strong>SCSS</strong> — Intermediate</li>
+            <strong>SCSS</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="3"/></li>
           <li class="box__content__list__item">
-            <strong>Bootstrap</strong> — Intermediate</li>
+            <strong>Bootstrap</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="3"/></li>
           <li class="box__content__list__item">
-            <strong>Bulma</strong> — Beginner</li>
+            <strong>Bulma</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="2"/><Star iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="1"/></li>
           <li class="box__content__list__item">
-            <strong>JavaScript</strong> — Beginner</li>
+            <strong>JavaScript</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="2"/><Star iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="1"/></li>
           <li class="box__content__list__item">
-            <strong>VueJS</strong> — Beginner</li>
+            <strong>VueJS</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="1"/><Star iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="2"/></li>
           <li class="box__content__list__item">
-            <strong>GIT</strong> — Beginner</li>
+            <strong>GIT</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="1"/><Star iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="2"/></li>
           <li class="box__content__list__item">
-            <strong>Linux</strong> — Intermediate - daily user</li>
+            <strong>Linux</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="2"/><Star iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="1"/></li>
           <li class="box__content__list__item">
-            <strong>Windows</strong> — Intermediate</li>
+            <strong>Windows</strong> — <StarFilled iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="2"/><Star iconColor="var(--star-color)" iconWidth="20" iconHeight="20" :amount="1"/></li>
         </ul>
       </div>
     </section>
@@ -70,15 +70,26 @@
 </template>
 
 <script>
+import Star from '@/components/icons/Star'
+import StarFilled from '@/components/icons/StarFilled'
+
 export default {
   name: 'about',
   mounted: function() {  
-    document.title = localStorage.pageTitle + ' | About Me'  
+    document.title = localStorage.pageTitle + ' | About Me'
+  },
+  components: {
+    Star,
+    StarFilled
   }
 }
 </script>
 
 <style scoped>
+:root {
+  --star-color: black;
+}
+
 .box {
   box-sizing: border-box;
   padding: .1rem 1rem;

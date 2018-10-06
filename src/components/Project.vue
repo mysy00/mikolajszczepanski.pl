@@ -109,6 +109,13 @@
           sourceCode: 'https://github.com/divosky/dayz-help/',
           thumbnail: './img/projects/small-10.png',
           fullSize: './img/projects/10.png'
+        },
+        {
+          name: 'Personal multilangual webpage',
+          previewLive: 'https://nowitam.pl/',
+          sourceCode: 'https://github.com/divosky/nowitam.pl/',
+          thumbnail: './img/projects/small-11.png',
+          fullSize: './img/projects/11.png'
         }
       ]
       }

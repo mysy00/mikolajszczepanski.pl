@@ -102,6 +102,13 @@
           sourceCode: '',
           thumbnail: './img/projects/small-9.jpg',
           fullSize: './img/projects/9.png'
+        },
+        {
+          name: 'Front-end for a SA:MP server',
+          previewLive: 'https://divosky.github.io/dayz-help/',
+          sourceCode: 'https://github.com/divosky/dayz-help/',
+          thumbnail: './img/projects/small-10.png',
+          fullSize: './img/projects/10.png'
         }
       ]
       }

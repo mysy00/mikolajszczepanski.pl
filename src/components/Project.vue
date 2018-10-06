@@ -41,7 +41,7 @@
         previewLive: 'Live Preview:',
         sourceCodeTitle: 'Source Code:',
         projects: [{
-          name: 'Old portfolio, the point was to made it look like a real DE',
+          name: 'Old portfolio, the point was to make it look and behave like a real DE',
           previewLive: '',
           sourceCode: '',
           thumbnail: './img/projects/small-1.png',

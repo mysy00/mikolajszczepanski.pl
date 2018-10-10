@@ -116,6 +116,13 @@
           sourceCode: 'https://github.com/divosky/nowitam.pl/',
           thumbnail: './img/projects/small-11.png',
           fullSize: './img/projects/11.png'
+        },
+        {
+          name: 'Find information about a country',
+          previewLive: '',
+          sourceCode: 'https://github.com/Divosky/country-info',
+          thumbnail: './img/projects/small-12.png',
+          fullSize: './img/projects/12.png'
         }
       ]
       }

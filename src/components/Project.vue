@@ -3,7 +3,7 @@
     <section class="projects__project" v-for="project in projects" :key="project.fullSize">
       <div class="project__header">
         <a :href="project.fullSize" class="project__header__link">
-          <img class="project__header__img" :src="project.thumbnail" alt="">
+          <div class="project__header__img" :style="'background: url(' + project.thumbnail + '); background-size: cover;'"></div>
         </a>
       </div>
       <div class="project__desc">
@@ -207,8 +207,8 @@
   }
   .project__header,
   .project__header__img {
-    width: 350px;
-    height: 250px;
+    width: 352px;
+    height: 198px;
   }
 }
 </style>

@@ -193,6 +193,7 @@
 @media (min-width: 480px) {
   .projects {
     display: flex;
+    flex-direction: row-reverse;
     box-sizing: border-box;
     width: 90%;
     padding: 1rem 0;
@@ -203,7 +204,7 @@
     display: inline-block;
   }
   .projects__project:not(:first-child) {
-    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .project__header,
   .project__header__img {

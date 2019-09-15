@@ -2,61 +2,107 @@
   <div id="app">
     <header class="header header-page">
       <label for="expandNavigation" class="header__expand-navigation-label">
-        <img src="https://png.icons8.com/ios/24/ffffff/menu.png" alt="Expand Navigation">
+        <menuhamburger
+            iconColor="#fff"
+            iconWidth="24"
+            iconHeight="24"
+            :amount="1"
+        />
       </label>
-      <input class="header__expand-navigation-input" id="expandNavigation" type="checkbox">
+      <input
+        class="header__expand-navigation-input"
+        id="expandNavigation"
+        type="checkbox"
+      />
       <nav class="header__nav">
         <div class="header__nav__main-section">
           <router-link class="header__nav__link" to="/">
             <span class="header__nav__link__title">Home</span>
-            <home iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
+            <home
+              iconColor="var(--nav-icon-color)"
+              iconWidth="24"
+              iconHeight="24"
+              :amount="1"
+            />
           </router-link>
           <router-link class="header__nav__link" to="/projects">
             <span class="header__nav__link__title">Projects</span>
-            <briefcase iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
+            <briefcase
+              iconColor="var(--nav-icon-color)"
+              iconWidth="24"
+              iconHeight="24"
+              :amount="1"
+            />
           </router-link>
           <router-link class="header__nav__link" to="/about">
             <span class="header__nav__link__title">About</span>
-            <about iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
+            <about
+              iconColor="var(--nav-icon-color)"
+              iconWidth="24"
+              iconHeight="24"
+              :amount="1"
+            />
           </router-link>
         </div>
         <div class="header__nav__socialmedia-section">
           <a class="header__nav__link" href="http://facebook.com/divoskyy">
             <span class="header__nav__link__title">Facebook</span>
-            <facebook iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
+            <facebook
+              iconColor="var(--nav-icon-color)"
+              iconWidth="24"
+              iconHeight="24"
+              :amount="1"
+            />
           </a>
           <a class="header__nav__link" href="http://github.com/divosky">
             <span class="header__nav__link__title">Github</span>
-            <github iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
+            <github
+              iconColor="var(--nav-icon-color)"
+              iconWidth="24"
+              iconHeight="24"
+              :amount="1"
+            />
           </a>
           <a class="header__nav__link" href="http://gitlab.com/divosky">
             <span class="header__nav__link__title">GitLab</span>
-            <gitlab iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
+            <gitlab
+              iconColor="var(--nav-icon-color)"
+              iconWidth="24"
+              iconHeight="24"
+              :amount="1"
+            />
           </a>
           <a class="header__nav__link" href="http://keybase.io/divosky">
             <span class="header__nav__link__title">Keybase</span>
-            <keybase iconColor="var(--nav-icon-color)" iconWidth="24" iconHeight="24" :amount="1"/>
+            <keybase
+              iconColor="var(--nav-icon-color)"
+              iconWidth="24"
+              iconHeight="24"
+              :amount="1"
+            />
           </a>
         </div>
       </nav>
     </header>
     <main class="main-page">
-      <router-view/>
+      <router-view />
     </main>
   </div>
 </template>
 
 <script>
-import home from '@/components/icons/Home'
-import briefcase from '@/components/icons/Briefcase'
-import about from '@/components/icons/About'
-import facebook from '@/components/icons/Facebook'
-import github from '@/components/icons/Github'
-import gitlab from '@/components/icons/Gitlab'
-import keybase from '@/components/icons/Keybase'
+import menuhamburger from "@/components/icons/MenuHamburger";
+import home from "@/components/icons/Home";
+import briefcase from "@/components/icons/Briefcase";
+import about from "@/components/icons/About";
+import facebook from "@/components/icons/Facebook";
+import github from "@/components/icons/Github";
+import gitlab from "@/components/icons/Gitlab";
+import keybase from "@/components/icons/Keybase";
 
 export default {
   components: {
+    menuhamburger,
     home,
     briefcase,
     about,
@@ -65,17 +111,17 @@ export default {
     gitlab,
     keybase
   },
-  created: function () {
-    localStorage.pageTitle = document.title
+  created: function() {
+    localStorage.pageTitle = document.title;
   }
-}
+};
 </script>
 
 <style>
 :root {
- --primary-color: #1082E8;
- --box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
- --nav-icon-color: #bbb;
+  --primary-color: #1082e8;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  --nav-icon-color: #bbb;
 }
 html,
 body {
@@ -87,7 +133,7 @@ body {
 }
 
 body {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #fafafa;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -99,7 +145,7 @@ body:before {
   left: 0;
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   background: #00000066;
 }
 
@@ -110,6 +156,7 @@ body:before {
 
 .header {
   background: #000;
+  user-select: none;
 }
 
 .header__expand-navigation-label {
@@ -122,7 +169,7 @@ body:before {
   display: none;
 }
 
-.header__expand-navigation-input:checked+.header__nav {
+.header__expand-navigation-input:checked + .header__nav {
   display: block;
 }
 
@@ -133,8 +180,8 @@ body:before {
 .header__nav__link {
   display: flex;
   justify-content: space-between;
-  padding: .3rem;
-  margin-bottom: .3rem;
+  padding: 0.3rem;
+  margin-bottom: 0.3rem;
   font-size: 1.3rem;
   color: #fff;
   text-decoration: none;
@@ -152,7 +199,7 @@ body:before {
   justify-content: space-around;
 }
 
-.header__nav__socialmedia-section>.header__nav__link>span {
+.header__nav__socialmedia-section > .header__nav__link > span {
   display: none;
 }
 
@@ -203,18 +250,18 @@ body:before {
       position: relative;
     }
     .header__nav__link:not(:last-child) {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
     .header__nav__link__title {
       position: absolute;
       left: 105%;
       display: none;
-      padding: .3rem;
-      font-size: .7rem;
+      padding: 0.3rem;
+      font-size: 0.7rem;
       background: #2a2a2a;
       border-radius: 3px;
     }
-    .header__nav__link:hover>.header__nav__link__title {
+    .header__nav__link:hover > .header__nav__link__title {
       display: block;
     }
     .main-page {

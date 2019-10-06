@@ -1,5 +1,5 @@
 <template>
-  <div class="icon icon-about header__nav__link__icon icon--main-navigation">
+  <div class="icon icon-about header__link-icon icon--main-navigation">
     <span class="offscreen">Toggle Navigation</span>
     <svg
       v-for="(icon, index) in amount"
@@ -43,18 +43,9 @@ export default {
 </script>
 
 <style>
-  .icon--main-navigation {
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-  }
-
-  .offscreen {
-    position:absolute;
-      left:-10000px;
-      top:auto;
-      width:1px;
-      height:1px;
-      overflow:hidden;
-  }
+.icon--main-navigation {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
 </style>

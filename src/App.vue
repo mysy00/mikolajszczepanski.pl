@@ -16,8 +16,8 @@
       />
       <nav class="header__nav">
         <div class="header__nav__main-section">
-          <router-link class="header__nav__link" to="/">
-            <span class="header__nav__link__title">Home</span>
+          <router-link class="header__link" to="/">
+            <span class="header__link-title">Home</span>
             <home
               iconColor="var(--nav-icon-color)"
               iconWidth="24"
@@ -25,8 +25,8 @@
               :amount="1"
             />
           </router-link>
-          <router-link class="header__nav__link" to="/projects">
-            <span class="header__nav__link__title">Projects</span>
+          <router-link class="header__link" to="/projects">
+            <span class="header__link-title">Projects</span>
             <briefcase
               iconColor="var(--nav-icon-color)"
               iconWidth="24"
@@ -34,8 +34,8 @@
               :amount="1"
             />
           </router-link>
-          <router-link class="header__nav__link" to="/about">
-            <span class="header__nav__link__title">About</span>
+          <router-link class="header__link" to="/about">
+            <span class="header__link-title">About</span>
             <about
               iconColor="var(--nav-icon-color)"
               iconWidth="24"
@@ -44,9 +44,9 @@
             />
           </router-link>
         </div>
-        <div class="header__nav__socialmedia-section">
-          <a class="header__nav__link" href="http://facebook.com/divoskyy">
-            <span class="header__nav__link__title">Facebook</span>
+        <div class="header__socialmedia-section">
+          <a class="header__link" href="http://facebook.com/divoskyy">
+            <span class="header__link-title">Facebook</span>
             <facebook
               iconColor="var(--nav-icon-color)"
               iconWidth="24"
@@ -54,8 +54,8 @@
               :amount="1"
             />
           </a>
-          <a class="header__nav__link" href="http://github.com/divosky">
-            <span class="header__nav__link__title">Github</span>
+          <a class="header__link" href="http://github.com/divosky">
+            <span class="header__link-title">Github</span>
             <github
               iconColor="var(--nav-icon-color)"
               iconWidth="24"
@@ -63,8 +63,8 @@
               :amount="1"
             />
           </a>
-          <a class="header__nav__link" href="http://gitlab.com/divosky">
-            <span class="header__nav__link__title">GitLab</span>
+          <a class="header__link" href="http://gitlab.com/divosky">
+            <span class="header__link-title">GitLab</span>
             <gitlab
               iconColor="var(--nav-icon-color)"
               iconWidth="24"
@@ -72,8 +72,8 @@
               :amount="1"
             />
           </a>
-          <a class="header__nav__link" href="http://keybase.io/divosky">
-            <span class="header__nav__link__title">Keybase</span>
+          <a class="header__link" href="http://keybase.io/divosky">
+            <span class="header__link-title">Keybase</span>
             <keybase
               iconColor="var(--nav-icon-color)"
               iconWidth="24"
@@ -177,7 +177,7 @@ body:before {
   display: none;
 }
 
-.header__nav__link {
+.header__link {
   display: flex;
   justify-content: space-between;
   padding: 0.3rem;
@@ -187,20 +187,29 @@ body:before {
   text-decoration: none;
 }
 
-.router-link-exact-active > .header__nav__link__icon,
-.router-link-exact-active > .header__nav__link__title {
+.router-link-exact-active > .header__link-icon,
+.router-link-exact-active > .header__link-title {
   --nav-icon-color: --primary-color;
   color: var(--primary-color);
   fill: var(--primary-color);
 }
 
-.header__nav__socialmedia-section {
+.header__socialmedia-section {
   display: flex;
   justify-content: space-around;
 }
 
-.header__nav__socialmedia-section > .header__nav__link > span {
+.header__socialmedia-section > .header__link > span {
   display: none;
+}
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 @supports (display: grid) {
@@ -243,16 +252,16 @@ body:before {
       flex-direction: column;
       justify-content: space-between;
     }
-    .header__nav__socialmedia-section {
+    .header__socialmedia-section {
       display: block;
     }
-    .header__nav__link {
+    .header_link {
       position: relative;
     }
-    .header__nav__link:not(:last-child) {
+    .header__link:not(:last-child) {
       margin-bottom: 0.5rem;
     }
-    .header__nav__link__title {
+    .header__link-title {
       position: absolute;
       left: 105%;
       display: none;
@@ -261,7 +270,7 @@ body:before {
       background: #2a2a2a;
       border-radius: 3px;
     }
-    .header__nav__link:hover > .header__nav__link__title {
+    .header__link:hover > .header__link-title {
       display: block;
     }
     .main-page {

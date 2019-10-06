@@ -2,27 +2,27 @@
   <section class="projects">
     <section class="projects__project" v-for="project in projects" :key="project.fullSize">
       <div class="project__header">
-        <a :href="project.fullSize" class="project__header__link">
-          <div class="project__header__img" :style="'background: url(' + project.thumbnail + '); background-size: cover;'"></div>
+        <a :href="project.fullSize" class="project__link">
+          <div class="project__img" :style="'background: url(' + project.thumbnail + '); background-size: cover;'"></div>
         </a>
       </div>
       <div class="project__desc">
-        <dl class="project__desc__list">
-          <dt class="project__desc__list__item-title">{{ nameTitle }}</dt>
-          <dd class="project__desc__list__item-desc">{{ project.name }}</dd>
+        <dl class="project__list">
+          <dt class="project__item-title">{{ nameTitle }}</dt>
+          <dd class="project__item-desc">{{ project.name }}</dd>
 
-          <dt class="project__desc__list__item-title" v-if="project.fullSize"> {{ previewImage }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.fullSize">
+          <dt class="project__item-title" v-if="project.fullSize"> {{ previewImage }}</dt>
+          <dd class="project__item-desc" v-if="project.fullSize">
             <a :href="project.fullSize">Click Here</a>
           </dd>
 
-          <dt class="project__desc__list__item-title" v-if="project.previewLive"> {{ previewLive }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.previewLive">
+          <dt class="project__item-title" v-if="project.previewLive"> {{ previewLive }}</dt>
+          <dd class="project__item-desc" v-if="project.previewLive">
             <a :href="project.previewLive">Click Here</a>
           </dd>
-          
-          <dt class="project__desc__list__item-title" v-if="project.sourceCode">{{ sourceCodeTitle }}</dt>
-          <dd class="project__desc__list__item-desc" v-if="project.sourceCode">
+
+          <dt class="project__item-title" v-if="project.sourceCode">{{ sourceCodeTitle }}</dt>
+          <dd class="project__item-desc" v-if="project.sourceCode">
             <a :href="project.sourceCode">Click Here</a>
           </dd>
         </dl>
@@ -159,33 +159,33 @@
 }
 
 .project__header,
-.project__header__img {
+.project__img {
   width: 100%;
   height: auto;
   max-height: 300px;
 }
 
-.project__desc__list {
+.project__list {
   display: block;
   padding: .5rem;
   margin: 0;
 }
 
-.project__desc__list__item-title {
+.project__item-title {
   font-weight: 700;
 }
 
-.project__desc__list__item-title,
-.project__desc__list__item-desc {
+.project__item-title,
+.project__item-desc {
   display: inline;
   margin: 0;
 }
 
-.project__desc__list__item-desc:before {
+.project__item-desc:before {
   content: " ";
 }
 
-.project__desc__list__item-desc:after {
+.project__item-desc:after {
   white-space: pre;
   content: "\A";
 }
@@ -207,7 +207,7 @@
     margin-right: 1rem;
   }
   .project__header,
-  .project__header__img {
+  .project__img {
     width: 352px;
     height: 198px;
   }

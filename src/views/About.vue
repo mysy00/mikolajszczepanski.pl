@@ -11,10 +11,6 @@
           <li class="box__list-item">
             <strong>SCSS</strong> — Intermediate</li>
           <li class="box__list-item">
-            <strong>Bootstrap</strong> — Intermediate</li>
-          <li class="box__list-item">
-            <strong>Bulma</strong> — Beginner</li>
-          <li class="box__list-item">
             <strong>JavaScript</strong> — Beginner</li>
           <li class="box__list-item">
             <strong>VueJS</strong> — Beginner</li>
@@ -24,6 +20,8 @@
             <strong>Linux</strong> — Intermediate - daily user</li>
           <li class="box__list-item">
             <strong>Windows</strong> — Intermediate</li>
+          <li class="box__list-item">
+            <strong>macOS</strong> — Intermediate</li>
         </ul>
       </div>
     </section>
@@ -61,6 +59,8 @@
       <h3 class="box__title">Employment History</h3>
       <div class="box__content">
         <ul class="box__list">
+          <li class="box__list-item">
+            <i>2018-06 till now</i> Freelance Developer</li>
           <li class="box__list-item">
             <i>2018-05 to 2018-06</i> — Informix - IT Service</li>
         </ul>

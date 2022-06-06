@@ -11,8 +11,8 @@
             class="project__img"
             :style="
               'background: url(' +
-                project.thumbnail +
-                '); background-size: cover;'
+              project.thumbnail +
+              '); background-size: cover;'
             "
           ></div>
         </a>
@@ -51,7 +51,7 @@
 <script>
 export default {
   name: "Project",
-  data: function() {
+  data: function () {
     return {
       nameTitle: "Name:",
       previewImage: "Full Size:",
@@ -59,8 +59,7 @@ export default {
       sourceCodeTitle: "Source Code:",
       projects: [
         {
-          name:
-            "Old portfolio, the point was to make it look and behave like a real DE",
+          name: "Old portfolio, the point was to make it look and behave like a real DE",
           previewLive: "",
           sourceCode: "",
           thumbnail: "./img/projects/small-1.png",
@@ -74,8 +73,7 @@ export default {
           fullSize: "./img/projects/2.png",
         },
         {
-          name:
-            "Multilangual website for a SA:MP Server, the goal was to help new players",
+          name: "Multilangual website for a SA:MP Server, the goal was to help new players",
           previewLive: "",
           sourceCode: "",
           thumbnail: "./img/projects/small-3.png",
@@ -103,24 +101,21 @@ export default {
           fullSize: "./img/projects/6.png",
         },
         {
-          name:
-            "Mybb theme written basically from scratch, based on bootstrap 4",
+          name: "Mybb theme written basically from scratch, based on bootstrap 4",
           previewLive: "",
           sourceCode: "",
           thumbnail: "./img/projects/small-7.png",
           fullSize: "./img/projects/7.png",
         },
         {
-          name:
-            "Mybb theme written basically from scratch for a SA:MP EXM Community, based on bootstrap 4",
+          name: "Mybb theme written basically from scratch for a SA:MP EXM Community, based on bootstrap 4",
           previewLive: "",
           sourceCode: "",
           thumbnail: "./img/projects/small-8.png",
           fullSize: "./img/projects/8.png",
         },
         {
-          name:
-            "Mybb theme written basically from scratch for a SA:MP Gang. Theme based on bootstrap 4",
+          name: "Mybb theme written basically from scratch for a SA:MP Gang. Theme based on bootstrap 4",
           previewLive: "https://immfamily.pl",
           sourceCode: "",
           thumbnail: "./img/projects/small-9.jpg",
@@ -128,24 +123,31 @@ export default {
         },
         {
           name: "Front-end for a SA:MP server",
-          previewLive: "https://divosky.github.io/dayz-help/",
-          sourceCode: "https://github.com/divosky/dayz-help/",
+          previewLive: "https://mysy00.github.io/dayz-help/",
+          sourceCode: "https://github.com/mysy00/dayz-help/",
           thumbnail: "./img/projects/small-10.png",
           fullSize: "./img/projects/10.png",
         },
         {
           name: "Personal multilangual webpage",
           previewLive: "https://nowitam.pl/",
-          sourceCode: "https://github.com/divosky/nowitam.pl/",
+          sourceCode: "https://github.com/mysy00/nowitam.pl/",
           thumbnail: "./img/projects/small-11.png",
           fullSize: "./img/projects/11.png",
         },
         {
           name: "Find information about a country",
           previewLive: "",
-          sourceCode: "https://github.com/Divosky/country-info",
+          sourceCode: "https://github.com/mysy00/country-info",
           thumbnail: "./img/projects/small-12.png",
           fullSize: "./img/projects/12.png",
+        },
+        {
+          name: "Website for a creative agency",
+          previewLive: "",
+          sourceCode: "",
+          thumbnail: "./img/projects/small-13.png",
+          fullSize: "./img/projects/13.png",
         },
       ],
     };

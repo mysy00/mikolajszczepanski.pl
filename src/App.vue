@@ -3,10 +3,10 @@
     <header class="header header-page">
       <label for="expandNavigation" class="header__expand-navigation-label">
         <menuhamburger
-            iconColor="#fff"
-            iconWidth="24"
-            iconHeight="24"
-            :amount="1"
+          iconColor="#fff"
+          iconWidth="24"
+          iconHeight="24"
+          :amount="1"
         />
       </label>
       <input
@@ -45,7 +45,7 @@
           </router-link>
         </div>
         <div class="header__socialmedia-section">
-          <a class="header__link" href="http://facebook.com/divoskyy">
+          <!-- <a class="header__link" href="http://facebook.com/divoskyy">
             <span class="header__link-title">Facebook</span>
             <facebook
               iconColor="var(--nav-icon-color)"
@@ -53,8 +53,8 @@
               iconHeight="24"
               :amount="1"
             />
-          </a>
-          <a class="header__link" href="http://github.com/divosky">
+          </a> -->
+          <a class="header__link" href="http://github.com/mysy00">
             <span class="header__link-title">Github</span>
             <github
               iconColor="var(--nav-icon-color)"
@@ -63,7 +63,7 @@
               :amount="1"
             />
           </a>
-          <a class="header__link" href="http://gitlab.com/divosky">
+          <a class="header__link" href="http://gitlab.com/mysy00">
             <span class="header__link-title">GitLab</span>
             <gitlab
               iconColor="var(--nav-icon-color)"
@@ -109,11 +109,11 @@ export default {
     facebook,
     github,
     gitlab,
-    keybase
+    keybase,
   },
-  created: function() {
+  created: function () {
     localStorage.pageTitle = document.title;
-  }
+  },
 };
 </script>
 
